@@ -34,7 +34,8 @@ $conn->close_db();
         <input type="button" value="Autos" onclick="autos()">
         <input type="button" value="Servicios" onclick="servicios()">
         <input type="button" value="Entregar" onclick="entrega()">
-        <input type="button" value="Dashboard" onclick="">
+        <input type="button" value="Dashboard" onclick=""> 
+        <input type="button" id="red" value="Salir" onclick="salir()">
     </div>
     <br><br><br>
     <canvas id="barChart"></canvas>
@@ -69,6 +70,12 @@ $conn->close_db();
         }
         function autos(){
             window.location.href="../Principal";
+        }
+        function entrega(){
+            window.location.href="../Entregar";
+        }
+        function salir(){
+            window.location.href="../../";
         }
     </script>
 </body>

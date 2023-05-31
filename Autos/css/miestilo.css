@@ -33,6 +33,10 @@ body {
     cursor: pointer;
 }
 
+#red{
+    background-color: red;
+}
+
 .container input[type="submit"]{
     width: 100%;
     padding: 10px;
@@ -50,6 +54,11 @@ body {
 .container input[type="submit"]:hover{
     background-color: #45a049;
 }
+
+#red:hover{
+    background-color: rgb(136, 0, 0);
+}
+
 .container textarea{
     width: 100%;
 }

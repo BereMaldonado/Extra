@@ -5,7 +5,9 @@
     header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
     include("../class/class_servicio_has_refaccion_dal.php");
+    include("../class/class_refaccion_dal.php");
     $servicio_ref = new servicio_has_refaccion_dal;
+    $refaccion_ref = new refaccion_dal;
     $idServicio = $_GET["idServicio"];
 
     $lista = $servicio_ref->lista_servicio_has_refaccion();
@@ -15,10 +17,11 @@
         $i=0;
         foreach($lista as $servicio){
             if($servicio->getServicio_idServicio() === $idServicio){
-                $renglon["Servicio_idServicio"] = $servicio->getServicio_idServicio();
-                $renglon["Servicio_Auto_numeroPlacas"] = $servicio->getServicio_Auto_numeroPlacas();
-                $renglon["Servicio_Auto_Cliente_idCliente"] = $servicio->getServicio_Auto_Cliente_idCliente();
-                $renglon["Refaccion_idRefaccion"] = $servicio->getRefaccion_idRefaccion();
+                $refaccion = $refaccion_ref->datos_por_idRefaccion($servicio->getRefaccion_idRefaccion());
+                $renglon["idRefaccion"] = $refaccion->getIdRefaccion();
+                $renglon["modelo"] = $refaccion->getModelo();
+                $renglon["marca"] = $refaccion->getMarca();
+                $renglon["pieza"] = $refaccion->getPieza();
                 $lista[$i]=$renglon;
                 $i++;
             }

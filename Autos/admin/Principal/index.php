@@ -12,6 +12,7 @@
             <input type="button" value="Servicios" onclick="servicios()">
             <input type="button" value="Entregar" onclick="entrega()">
             <input type="button" value="Dashboard" onclick="dash()">
+            <input type="button" id="red" value="Salir" onclick="salir()">
         </div>
         <div class="center">
             <h2>Refaccionaria de Autos</h2>
@@ -76,8 +77,14 @@
             function servicios(){
                 window.location.href="../Servicio";
             }
+            function entrega(){
+                window.location.href="../Entregar";
+            }
             function dash(){
                 window.location.href="../VDashboard";
+            }
+            function salir(){
+                window.location.href="../../";
             }
         </script>
 </body>

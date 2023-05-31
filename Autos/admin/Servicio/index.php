@@ -11,7 +11,8 @@
         <input type="button" value="Autos" onclick="autos()">
         <input type="button" value="Servicios" onclick="">
         <input type="button" value="Entregar" onclick="entrega()">
-        <input type="button" value="Dashboard" onclick="dash()">
+        <input type="button" value="Dashboard" onclick="dash()"> 
+        <input type="button" id="red" value="Salir" onclick="salir()">
     </div>
     <div class="center">
         <h2>Refaccionaria de Autos</h2>
@@ -108,8 +109,14 @@
         function autos(){
             window.location.href="../Principal";
         }
+        function entrega(){
+            window.location.href="../Entregar";
+        }
         function dash(){
             window.location.href="../VDashboard";
+        }
+        function salir(){
+            window.location.href="../../";
         }
 
         function buscarCliente(event) {
@@ -163,7 +170,7 @@
                 let lista = document.getElementById("refacciones");
                 for(var i = 0; i < Object.keys(data).length-1; i++){
                     var li = document.createElement("li");
-                    li.textContent = data[i]["Refaccion_idRefaccion"];
+                    li.textContent = data[i]["idRefaccion"]+" ("+data[i]["modelo"]+", "+data[i]["marca"]+", "+data[i]["pieza"]+")";
                     var primerLi = lista.lastElementChild;
                     lista.insertBefore(li, primerLi);
                 }

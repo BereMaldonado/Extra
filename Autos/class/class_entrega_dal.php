@@ -78,7 +78,6 @@
         }
 
         function insertar_entrega($obj){
-            
             $sql="insert into entrega(";
             $sql.="idEntrega,";
             $sql.="nomUsuario,";
